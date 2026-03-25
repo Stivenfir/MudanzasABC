@@ -13,25 +13,25 @@ export class PrPersona {
   @PrimaryGeneratedColumn({ name: 'persona_id' })
   personaId: number;
 
-  @Column({ name: 'tipo_documento', length: 20 })
+  @Column({ name: 'tipo_documento', type: 'varchar', length: 20 })
   tipoDocumento: string;
 
-  @Column({ name: 'numero_documento', length: 30, unique: true })
+  @Column({ name: 'numero_documento', type: 'varchar', length: 30, unique: true })
   numeroDocumento: string;
 
-  @Column({ name: 'nombres', length: 80 })
+  @Column({ name: 'nombres', type: 'varchar', length: 80 })
   nombres: string;
 
-  @Column({ name: 'apellidos', length: 80 })
+  @Column({ name: 'apellidos', type: 'varchar', length: 80 })
   apellidos: string;
 
-  @Column({ name: 'correo_electronico', length: 120, nullable: true })
-  correoElectronico: string | null;
+  @Column({ name: 'correo_electronico', type: 'varchar', length: 120, nullable: true })
+  correoElectronico?: string;
 
-  @Column({ name: 'telefono', length: 30, nullable: true })
-  telefono: string | null;
+  @Column({ name: 'telefono', type: 'varchar', length: 30, nullable: true })
+  telefono?: string;
 
-  @Column({ name: 'esta_activo', default: true })
+  @Column({ name: 'esta_activo', type: 'boolean', default: true })
   estaActivo: boolean;
 
   @CreateDateColumn({ name: 'creado_en' })

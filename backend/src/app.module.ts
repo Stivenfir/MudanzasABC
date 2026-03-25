@@ -22,7 +22,7 @@ import { PrUsuarioLogin } from './modules/rrhh/entities/pr-usuario-login.entity'
       host: process.env.DB_HOST || 'mysql',
       port: Number(process.env.DB_PORT || 3306),
       username: process.env.DB_USERNAME || 'root',
-      password: process.env.DB_PASSWORD || 'root123',
+      password: process.env.DB_PASSWORD ?? '',
       database: process.env.DB_DATABASE || 'abcmudanzas',
       entities: [User, PrPersona, PrEmpleado, PrRol, PrEmpleadoRol, PrUsuarioLogin],
       synchronize: false,
